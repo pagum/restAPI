@@ -1,8 +1,9 @@
 const express = require("express");
 const studentRoutes = require("./src/student/routes");
+const config = require("platformsh-config").config();
 
 const app = express();
-const port = 3000;
+const port = config.isValidPlatform() ? config.port : 3000;
 
 //middleware
 app.use(express.json());
