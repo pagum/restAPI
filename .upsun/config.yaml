@@ -20,6 +20,7 @@ applications:
     # More information: https://docs.upsun.com/create-apps/app-reference.html#relationships
     relationships:
       database:  "db:postgresql"
+      database2: "db2:mongodb"
       
 
     # Mounts define directories that are writable after the build is complete.
@@ -126,6 +127,8 @@ applications:
 services:
   db:
     type: postgresql:15 # All available versions are: 15, 14, 13, 12, 11
+  db2:
+    type: mongodb:3.6
 
   
 
